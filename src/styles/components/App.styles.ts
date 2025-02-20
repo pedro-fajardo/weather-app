@@ -23,13 +23,13 @@ export const AppContainer = styled.div<AppContainerProps>`
 
 const getWeatherBackground = (condition?: string) => {
   const backgrounds = {
-    'clear': '/images/weather/clear.jpg',
-    'clouds': '/images/weather/clouds.jpg',
-    'rain': '/images/weather/rain.jpg',
-    'snow': '/images/weather/snow.jpg',
-    'thunderstorm': '/images/weather/thunder.jpg',
-    'mist': '/images/weather/mist.jpg',
-    'default': '/images/weather/default.jpg'
+    'clear': `${process.env.PUBLIC_URL}/images/weather/clear.jpg`,
+    'clouds': `${process.env.PUBLIC_URL}/images/weather/clouds.jpg`,
+    'rain': `${process.env.PUBLIC_URL}/images/weather/rain.jpg`,
+    'snow': `${process.env.PUBLIC_URL}/images/weather/snow.jpg`,
+    'thunderstorm': `${process.env.PUBLIC_URL}/images/weather/thunder.jpg`,
+    'mist': `${process.env.PUBLIC_URL}/images/weather/mist.jpg`,
+    'default': `${process.env.PUBLIC_URL}/images/weather/default.jpg`
   };
 
   if (!condition) return backgrounds.default;
