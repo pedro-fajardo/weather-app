@@ -1,22 +1,25 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyles = createGlobalStyle`
+export default createGlobalStyle`
   * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
 
   body {
-    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background: white;
+    color: #333;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+      Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #f0f2f5;
-    color: #333;
   }
 
   button {
     cursor: pointer;
+    
     &:disabled {
       cursor: not-allowed;
       opacity: 0.7;
@@ -27,5 +30,3 @@ const GlobalStyles = createGlobalStyle`
     font-family: inherit;
   }
 `;
-
-export default GlobalStyles;

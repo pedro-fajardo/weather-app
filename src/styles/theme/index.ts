@@ -1,11 +1,11 @@
 export const theme = {
   colors: {
-    primary: "#007bff",
-    secondary: "#6c757d",
+    primary: "#1a237e",
+    secondary: "#3949ab",
     background: "#f0f2f5",
-    text: "#333",
-    error: "#dc3545",
-    success: "#28a745",
+    text: "#2c3e50",
+    error: "#e74c3c",
+    success: "#2ecc71",
     warning: "#ffc107",
     white: "#ffffff",
     gray: {
@@ -30,13 +30,13 @@ export const theme = {
   borderRadius: {
     sm: "4px",
     md: "8px",
-    lg: "16px",
-    xl: "24px",
+    lg: "12px",
+    xl: "20px",
   },
   shadows: {
-    sm: "0 1px 3px rgba(0,0,0,0.12)",
-    md: "0 4px 6px rgba(0,0,0,0.1)",
-    lg: "0 10px 15px rgba(0,0,0,0.1)",
+    sm: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    md: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    lg: "0 8px 16px rgba(0, 0, 0, 0.1)",
   }
 };
 
