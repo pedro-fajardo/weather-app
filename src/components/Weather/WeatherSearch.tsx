@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { WeatherSearchProps } from '../../types/weather';
-import { SearchContainer, SearchInput, SearchButton, ErrorMessage, InputWrapper, UnitContainer, UnitLabel, Switch, ErrorMessageContainer } from '../../styles/components/Weather/WeatherSearch.styles';
+import { SearchContainer, SearchInput, SearchButton, ErrorMessage, InputWrapper, UnitContainer, UnitLabel, Switch, ErrorMessageContainer, FormContent } from '../../styles/components/Weather/WeatherSearch.styles';
 import { UnitContext } from '../../context/UnitContext';
 
 /**
@@ -41,36 +41,38 @@ const WeatherSearch: React.FC<WeatherSearchProps> = ({ onSearch }) => {
       {({ errors, isSubmitting, isValid }) => (
         <Form>
           <SearchContainer>
-            <InputWrapper>
-              <Field
-                as={SearchInput}
-                name="city"
-                type="text"
-                placeholder="Enter city name..."
-              />
-              <SearchButton
-                type="submit"
-                disabled={isSubmitting || !isValid}
-              >
-                Search
-              </SearchButton>
-              <UnitContainer>
-                <UnitLabel>{unit === 'metric' ? 'ºC' : 'ºF'}</UnitLabel>
-                <Switch 
-                  checked={unit === 'imperial'} 
-                  onChange={toggleUnit} 
-                  disabled={isSubmitting}
+            <FormContent>
+              <InputWrapper>
+                <Field
+                  as={SearchInput}
+                  name="city"
+                  type="text"
+                  placeholder="Enter city name..."
                 />
-                <UnitLabel>{unit === 'metric' ? 'ºF' : 'ºC'}</UnitLabel>
-              </UnitContainer>
-            </InputWrapper>
-            {errors.city ? (
-              <ErrorMessageContainer>
-                <ErrorMessage>{errors.city}</ErrorMessage>
-              </ErrorMessageContainer>
-            ) : (
-              <ErrorMessageContainer />
-            )}
+                <SearchButton
+                  type="submit"
+                  disabled={isSubmitting || !isValid}
+                >
+                  Search
+                </SearchButton>
+                <UnitContainer>
+                  <UnitLabel>{unit === 'metric' ? 'ºC' : 'ºF'}</UnitLabel>
+                  <Switch
+                    checked={unit === 'imperial'}
+                    onChange={toggleUnit}
+                    disabled={isSubmitting}
+                  />
+                  <UnitLabel>{unit === 'metric' ? 'ºF' : 'ºC'}</UnitLabel>
+                </UnitContainer>
+              </InputWrapper>
+              {errors.city ? (
+                <ErrorMessageContainer>
+                  <ErrorMessage>{errors.city}</ErrorMessage>
+                </ErrorMessageContainer>
+              ) : (
+                <ErrorMessageContainer />
+              )}
+            </FormContent>
           </SearchContainer>
         </Form>
       )}
